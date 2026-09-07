@@ -1,0 +1,17 @@
+* texto=auto eol=lf
+.sh text eol=lf
+.bash text eol=lf
+Dockerfile text eol=lf
+.yml text eol=lf
+.yaml text eol=lf
+png. binary
+cat > .gitattributes << 'E0F'
+* texto=auto eol=lf
+.sh text eol=lf
+.bash text eol=lf
+Dockerfile text eol=lf
+.yml text eol=lf
+.yaml text eol=lf
+.png. binary
+
+*.drawio binary
