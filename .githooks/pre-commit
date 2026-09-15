@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+patrones='(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|password[[:space:]]*=[[:space:]]*["\x27][^"\x27]{6,}|SECRET_KEY[[:space:]]*=|aws_secret_access_key)'
+if git diff --cached --name-only -z | xargs -0 grep -InE "$patrones" 2>/dev/null; then
+echo ""
+echo "COMMIT BLOQUEADO: se detecto algo que parece una credencial."
+echo "Saquela del codigo, pongala en .env y documente el nombre en .env.example"
+exit 1
+fi
